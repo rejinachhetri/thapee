@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,8 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Work+Sans:wght@300&display=swap"
         rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.google.com/specimen/Moon+Dance">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Work+Sans:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Moon+Dance">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>Document</title>
 </head>
 
@@ -26,7 +30,21 @@
 
         </div>
 
-        <nav class="border">
+
+        <button id="btn" onclick="showNavHandler()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+
+
+
+
+        <nav class="border" id="nav1">
+            <button>
+                <i class="fas fa-times" id="cancel"></i>
+            </button>
+
+
             <a class="border" href="https://narutodattebayo.netlify.app/">Home</a>
             <a href="https://www.youtube.com/watch?v=jlRiJYP9OJs">Services</a>
             <a href="#">Gallery</a>
@@ -52,7 +70,7 @@
             <div id="hello" class="hello border">
 
                 <h3 class="border"> HELLO </h3>
-                <div class="border"></div>
+                <div class="border" id="helloborder" onclick="helloBorderHandler()"></div>
 
             </div>
 
@@ -83,8 +101,7 @@
         </aside>
         <aside class="right-side border">
 
-            <img class="right-side-image border" src="reading.png"
-                alt="img-error 404">
+            <img class="right-side-image border" src="reading.png" alt="img-error 404">
 
 
         </aside>
@@ -98,6 +115,89 @@
 
 
     </main>
+
+
+
+    <script>
+
+        let showNav = false
+        let getNav = document.getElementById('nav1')
+        let getCanc = document.getElementById('cancel')
+        let moveBtn = document.getElementById('btn')
+        let changeBorder = document.getElementById('helloborder')
+        let helloBorder = false
+        function showNavHandler() {
+
+            showNav = !showNav
+            if (showNav === true) {
+                getNav.style.display = "block"
+                getNav.style.minHeight = "30rem"
+                getNav.style.display = "flex"
+                getNav.style.flexDirection = "column"
+                getNav.style.left = "0rem"
+                moveBtn.style.marginLeft = "14rem"
+                getCanc.style.display = "block"
+                moveBtn.style.opacity = "0"
+                moveBtn.style.zIndex = "1"
+            }
+            else {
+                getNav.style.display = "none"
+                getCanc.style.display = "none"
+                moveBtn.style.marginLeft = "0.9rem"
+                moveBtn.style.opacity = "100"
+
+            }
+
+        }
+
+
+
+        function helloBorderHandler() {
+
+            helloBorder = !helloBorder
+
+            if (helloBorder === true) {
+
+                changeBorder.style.width = "52%"
+                changeBorder.style.marginLeft = "3rem"
+                changeBorder.style.borderColor=" #854fee"
+
+            }
+
+            else {
+
+                changeBorder.style.width = "68%"
+                changeBorder.style.marginLeft = "-0rem"
+                changeBorder.style.borderColor="black"
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
 
 
 
